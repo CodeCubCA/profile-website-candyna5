@@ -1126,6 +1126,7 @@
             border: 2px solid rgba(135, 206, 235, 0.3);
             transition: all 0.3s ease;
             margin-top: 40px;
+            position: relative;
         }
 
         .project-card:hover {
@@ -1133,9 +1134,35 @@
             box-shadow: 0 15px 35px rgba(135, 206, 235, 0.3);
         }
 
+        .project-card-purple {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.15));
+            border: 2px solid rgba(139, 92, 246, 0.3);
+        }
+
         .project-card-purple:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Featured Project Badge */
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            z-index: 10;
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6); }
         }
 
         .project-screenshot {
@@ -1354,6 +1381,57 @@
         <div class="about-section" id="projects">
             <h2 class="about-title">💼 My Projects</h2>
 
+            <!-- Voice AI Assistant Project Card - FEATURED -->
+            <div class="project-card project-card-purple">
+                <div class="featured-badge">⭐ FEATURED PROJECT</div>
+
+                <div class="project-screenshot" style="background: linear-gradient(135deg, #a78bfa, #ec4899);">
+                    <img src="img/Voice-ai-assistant.png" alt="Voice AI Assistant Screenshot" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);" />
+                </div>
+
+                <div class="project-info">
+                    <div>
+                        <h3 style="color: #a78bfa;">🎤 Voice AI Assistant</h3>
+                        <p class="project-description">
+                            An intelligent voice-enabled chatbot powered by Google Gemini API. Features real-time speech-to-text input, natural text-to-speech output, and seamless AI conversations. This full-featured AI assistant supports multiple personality modes (Friendly, Professional, Creative), customizable voice settings, and provides an intuitive chat interface with complete message history. Built as part of the AI with Python course at CodeCub!
+                        </p>
+
+                        <div class="tech-stack">
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);">Python</span>
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #ef4444, #f87171);">Streamlit</span>
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">Google Gemini API</span>
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">gTTS</span>
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #10b981, #34d399);">Web Speech API</span>
+                            <span class="tech-badge" style="background: linear-gradient(135deg, #ec4899, #f472b6);">Render</span>
+                        </div>
+
+                        <div style="background: rgba(139, 92, 246, 0.1); border-left: 3px solid #8b5cf6; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                            <h4 style="color: #8b5cf6; font-size: 1rem; margin-bottom: 10px;">🌟 Key Features:</h4>
+                            <ul style="color: #777; line-height: 1.8; margin-left: 15px;">
+                                <li>🎤 Voice input using Web Speech API for hands-free interaction</li>
+                                <li>🔊 Voice output using Google Text-to-Speech for natural responses</li>
+                                <li>🤖 AI-powered conversations with Google Gemini 1.5 Flash</li>
+                                <li>🎭 Multiple personality modes (Friendly, Professional, Creative)</li>
+                                <li>⚙️ Customizable voice settings (speed, language)</li>
+                                <li>💬 Real-time chat interface with message history</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/CodeCubCA/voice-ai-assistant-Candyna3" target="_blank" class="project-btn btn-github">
+                            <svg class="github-icon" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                            </svg>
+                            View Code
+                        </a>
+                        <a href="https://huggingface.co/spaces/Candyna/Voice-ai-assistant" target="_blank" class="project-btn" style="background: linear-gradient(135deg, #8b5cf6, #ec4899); color: #fff; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);">
+                            🚀 Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Personal Portfolio Website Project Card -->
             <div class="project-card">
                 <div class="project-screenshot">
@@ -1392,7 +1470,7 @@
             </div>
 
             <!-- Music Adviser AI Chatbox Project Card -->
-            <div class="project-card project-card-purple" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.15)); border: 2px solid rgba(139, 92, 246, 0.3); margin-top: 40px;">
+            <div class="project-card" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.15)); border: 2px solid rgba(139, 92, 246, 0.3); margin-top: 40px;">
                 <div class="project-screenshot" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">
                     <img src="img/Ai chat box .png" alt="Music Adviser AI Assistant Screenshot" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);" />
                 </div>
